@@ -20,7 +20,7 @@
     </div>
 </template>
 <script>
-    import { ref, computed } from 'vue'
+    import { ref, computed, watch } from 'vue'
     export default {
         setup() {
             const name = ['munna','rahman','mustafizur']
@@ -44,7 +44,12 @@
             function deleteTodo(index) {
                 todos.value.splice(index,1)
             }
-
+            watch(newTodoName,(newvalue) => {
+                if(name.includes(newvalue.toLowerCase())) {
+                    newTodoName = ''
+                    alert("You don't Write " + newvalue + ' name');
+                }
+            })
             return {
                 newTodoName,
                 todos,
