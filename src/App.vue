@@ -1,7 +1,19 @@
+<!--Vue3 Script Setup-->
+<script setup>
+
+  import Setup from "./views/Setup"
+  let name = "munna"
+
+</script>
+
+
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+
+    <router-link to="/">Option API</router-link> |
+    <router-link to="/composition">Composition API</router-link> |
+    <router-link to="/setup">Setup</router-link>
+    <Setup />
   </div>
   <router-view/>
 </template>
